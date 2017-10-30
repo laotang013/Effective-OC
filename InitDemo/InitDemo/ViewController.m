@@ -31,7 +31,31 @@
         NSLog(@"error: %@",error);
     }
     
-   
+    
+    /*
+     块强大之处在于:在声明他的范围里,所有变量都可以为其捕获，这就是说那个范围里的全部变量，在块里依然可用。
+     默认情况 为块所捕获的变量，是不可以在块里面修改的。加上__block修饰符，这样就可以在块内修改了。
+     */
+    
+    int additaional = 5;
+    int (^addBlock)(int a,int b) = ^(int a,int b)
+    {
+        return a+b+additaional;
+    };
+    NSLog(@"block值为:%d",addBlock(2,5));
+    
+    
+    
+    
+}
+
+#pragma mark - **************** 同步锁
+-(void)synchronizedMethod
+{
+    @synchronized(self)
+    {
+        //Safe...
+    }
 }
 
 
