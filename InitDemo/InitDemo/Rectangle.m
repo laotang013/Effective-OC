@@ -177,4 +177,26 @@
     return shareInstanceOnce;
 }
 
+#pragma mark - **************** 循环遍历
+-(void)testFor
+{
+    //遍历数组 第一种方法:
+    //for循环
+    NSArray *array = @[@(1),@(2),@(3),@(4)];
+    for (int i=0; i<array.count; i++) {
+        id obj = array[i];
+        //doSomeThing
+    }
+    
+    NSDictionary *dic = @{@"one":@"oneValue",@"two":@"twoValue"};
+    NSArray *keys = [dic allKeys];
+    for (int i=0; i<keys.count; i++) {
+        id key = keys[i];
+        id value = dic[key];
+        //doSomething;
+    }
+    
+}
+
+
 @end
