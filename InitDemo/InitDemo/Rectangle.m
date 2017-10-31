@@ -7,6 +7,7 @@
 //
 
 #import "Rectangle.h"
+
 @interface Rectangle()
 {
     struct{
@@ -21,16 +22,24 @@
 @property(nonatomic,assign,readwrite)float width;
 -(void)p_privateTest;//增加一个前缀 表示其为私有方法
 //ps:先把方法原型写出来。然后在逐个实现。要想使类的代码更容易读懂。
+
+
+/**队列*/
+@property(nonatomic,strong)dispatch_queue_t syncQueue;
 @end
+
 @implementation Rectangle
 {
     NSMutableSet *_friends;
+    
 }
+@synthesize someThing = _someThing;
 -(instancetype)initWithWidth:(float)width andHeight:(float)height
 {
     if (self = [super init]) {
         _width = width;
         _height = height;
+        _syncQueue = dispatch_get_global_queue(0, 0);
         
     }
     return self;
@@ -121,4 +130,51 @@
      */
     
 }
+
+#pragma mark - **************** GCD
+-(NSString *)someThing
+{
+    dispatch_queue_t queue = dispatch_queue_create("ddd", NULL);
+    __block NSString *localSomeString;
+    dispatch_sync(_syncQueue, ^{
+        localSomeString = _someThing;
+        NSLog(@"localSomeString:%@",_someThing);
+    });
+    return localSomeString;
+}
+
+
+-(void)setSomeThing:(NSString *)someThing
+{
+    dispatch_barrier_async(_syncQueue, ^{
+        _someThing = someThing;
+        NSLog(@"写入:%@",someThing);
+        NSLog(@"----%@",[NSThread currentThread]);
+    });
+}
+#pragma mark - **************** 单例
++(id)shareInstance
+{
+    static Rectangle *shareInstance = nil;
+    @synchronized(self)
+    {
+        if (!shareInstance) { //这里将创建单例的代码包裹在同步块中。
+            //线程安全是大家争论的主要问题。 保证线程安全。
+            shareInstance = [[self alloc]init];
+        }
+    }
+    return shareInstance;
+}
+
++(instancetype)shareInstanceOnce
+{
+    //把该变量定义在static作用域中,可以保证编译器在每次执行shareInstace方法时都会复用这个变量,而不会创建新变量。
+    static Rectangle *shareInstanceOnce = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shareInstanceOnce = [[self alloc]init];
+    });
+    return shareInstanceOnce;
+}
+
 @end

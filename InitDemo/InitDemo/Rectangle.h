@@ -27,4 +27,8 @@
 
 @property(nonatomic,weak)id<RectangleDelegate> delegate;
 
+
+/**测试同步数据*/
+@property(nonatomic,copy)NSString *someThing;
+
 @end

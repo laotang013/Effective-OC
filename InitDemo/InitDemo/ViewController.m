@@ -31,6 +31,11 @@
         NSLog(@"error: %@",error);
     }
     
+    rectangle.someThing = @"你好";
+    rectangle.someThing = @"大家好";
+    NSLog(@"rectangle.someThing%@",rectangle.someThing);
+    NSLog(@"rectangle.someThing%@",rectangle.someThing);
+    
     
     /*
      块强大之处在于:在声明他的范围里,所有变量都可以为其捕获，这就是说那个范围里的全部变量，在块里依然可用。
@@ -50,14 +55,28 @@
 }
 
 #pragma mark - **************** 同步锁
+//同步块
 -(void)synchronizedMethod
 {
-    @synchronized(self)
+    @synchronized(self)//同步行为所针对的是self. 共用同一锁的那些同步块都必须按顺序执行，若是self对象上的频繁加锁。那么程序可能另一段与此无关的代码执行完毕。
     {
         //Safe...
+        //这种写法根据给定的对象，自动创建一个锁，并等待块中的代码执行完毕。执行到这段代码结尾处，锁就释放了。
+        
     }
 }
 
+
+//NSLock对象
+-(void)lockMethod
+{
+    NSLock *lockMethod = [[NSLock alloc]init];
+    [lockMethod lock];
+    //Safe
+    [lockMethod unlock];
+}
+
+//极端情况下 同步块会导致死锁。
 
 #pragma mark - RectangleDelegate
 -(void)doitForRectangle:(Rectangle *)rectangle nameStr:(NSString *)str
