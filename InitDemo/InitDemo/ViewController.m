@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Rectangle.h"
 #import "EOCClass.h"
+#import "Square.h"
 @interface ViewController ()<RectangleDelegate>
 @property (nonatomic,strong) EOCClass *eocClass;
 @end
@@ -31,7 +32,7 @@
     if (![rectangle dosomething:&error]) {
         NSLog(@"error: %@",error);
     }
-    
+
     rectangle.someThing = @"你好";
     rectangle.someThing = @"大家好";
     NSLog(@"rectangle.someThing%@",rectangle.someThing);
@@ -56,6 +57,9 @@
     [self.eocClass startPolling];
     //说明: 由于目标对象是self 所以保留了此实例 2.因为计时器是实例变量存放的。所以实例变量也保留了计时器。 这样就形成了保留环。
     //打破保留环 1.改变实例变量或令计时器无效 调用stopPolling 要么令系统将此实例回收。只有这样才能打破保留环。
+    
+    
+    Square *square = [[Square alloc]init];
     
 }
 

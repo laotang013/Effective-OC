@@ -34,6 +34,16 @@
     
 }
 @synthesize someThing = _someThing;
++(void)load
+{
+    NSLog(@"Rectangle");
+}
+
++(void)initialize
+{
+    NSLog(@"Rectangle initialize方法");
+}
+
 -(instancetype)initWithWidth:(float)width andHeight:(float)height
 {
     if (self = [super init]) {
