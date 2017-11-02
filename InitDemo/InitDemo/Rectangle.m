@@ -196,6 +196,38 @@
         //doSomething;
     }
     
+    NSSet *aSet = @{@"setOne":@"one"};
+    NSArray *arr = [aSet allObjects];
+    for (int i=0; i<arr.count; i++) {
+        id object = arr[i];
+        //doSomething;
+    }
+    
+    //字典与set都是无序的。所以无法根据特定的整数下标来直接访问其值。于是就需要先获取字典里的所有键或是set里的所有对象。
+    //NSEnumerator是个抽象基类 其中只定义了两个方法 供其具体子类来实现。
+    //-(NSArray *)allObjects
+    //-(id)nextObject 它返回没枚举里的下个对象每次调用该方法时,其内部数据结构都会更新。使得下次调用方法时能返回下个对象。等到枚举中的全部对象都已返回的时候之后,再调用就将返回nil.这表示达到枚举末端了。
+    NSEnumerator *enumerator = [array objectEnumerator];
+    id object;
+    while ((object = [enumerator nextObject]) != nil) {
+        //do SomeThing;
+    }
+    
+    NSEnumerator *dicEnum = [dic keyEnumerator];
+    id key;
+    while ((key = [enumerator nextObject] )!= nil) {
+        //do something.z
+    }
+    
+    //反序遍历
+    for (id obj in [array reverseObjectEnumerator]) {
+        NSLog(@"%@",obj);
+    }
+    //反向遍历
+   [ array enumerateObjectsWithOptions:(NSEnumerationReverse) usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    
+    }];
+    
 }
 
 

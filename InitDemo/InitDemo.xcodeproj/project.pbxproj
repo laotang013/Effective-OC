@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C964708D1FAB14F000F61D64 /* EOCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C964708C1FAB14F000F61D64 /* EOCClass.m */; };
+		C96470961FAB197400F61D64 /* NSTimer+EOCBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C96470951FAB197400F61D64 /* NSTimer+EOCBlockSupport.m */; };
 		C964CC621FA1D724002D2CF1 /* Rectangle+Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = C964CC611FA1D724002D2CF1 /* Rectangle+Customer.m */; };
 		C98BD1D61FA088F000C2A937 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BD1D51FA088F000C2A937 /* AppDelegate.m */; };
 		C98BD1D91FA088F000C2A937 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BD1D81FA088F000C2A937 /* ViewController.m */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C964708B1FAB14F000F61D64 /* EOCClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCClass.h; sourceTree = "<group>"; };
+		C964708C1FAB14F000F61D64 /* EOCClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCClass.m; sourceTree = "<group>"; };
+		C96470941FAB197400F61D64 /* NSTimer+EOCBlockSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+EOCBlockSupport.h"; sourceTree = "<group>"; };
+		C96470951FAB197400F61D64 /* NSTimer+EOCBlockSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+EOCBlockSupport.m"; sourceTree = "<group>"; };
 		C964CC601FA1D724002D2CF1 /* Rectangle+Customer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rectangle+Customer.h"; sourceTree = "<group>"; };
 		C964CC611FA1D724002D2CF1 /* Rectangle+Customer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Rectangle+Customer.m"; sourceTree = "<group>"; };
 		C98BD1D11FA088F000C2A937 /* InitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +79,10 @@
 				C98BD1D81FA088F000C2A937 /* ViewController.m */,
 				C98BD1EA1FA0890B00C2A937 /* Rectangle.h */,
 				C98BD1EB1FA0890B00C2A937 /* Rectangle.m */,
+				C964708B1FAB14F000F61D64 /* EOCClass.h */,
+				C964708C1FAB14F000F61D64 /* EOCClass.m */,
+				C96470941FAB197400F61D64 /* NSTimer+EOCBlockSupport.h */,
+				C96470951FAB197400F61D64 /* NSTimer+EOCBlockSupport.m */,
 				C964CC601FA1D724002D2CF1 /* Rectangle+Customer.h */,
 				C964CC611FA1D724002D2CF1 /* Rectangle+Customer.m */,
 				C98BD1ED1FA08A7F00C2A937 /* Square.h */,
@@ -157,10 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C964708D1FAB14F000F61D64 /* EOCClass.m in Sources */,
 				C98BD1D91FA088F000C2A937 /* ViewController.m in Sources */,
 				C98BD1E41FA088F000C2A937 /* main.m in Sources */,
 				C98BD1D61FA088F000C2A937 /* AppDelegate.m in Sources */,
 				C964CC621FA1D724002D2CF1 /* Rectangle+Customer.m in Sources */,
+				C96470961FAB197400F61D64 /* NSTimer+EOCBlockSupport.m in Sources */,
 				C98BD1EF1FA08A7F00C2A937 /* Square.m in Sources */,
 				C98BD1EC1FA0890B00C2A937 /* Rectangle.m in Sources */,
 			);
