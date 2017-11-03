@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "TestHook.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    
+    TestHook *hook = [[TestHook alloc]init];
+    UIEvent *event = [[UIEvent alloc]init];
+
+    [hook sendEventHooked:event];
     return YES;
 }
 

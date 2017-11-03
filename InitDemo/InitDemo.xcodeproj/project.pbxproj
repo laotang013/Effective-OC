@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C95877361FAC3E6500B510B1 /* TestHook.m in Sources */ = {isa = PBXBuildFile; fileRef = C95877351FAC3E6500B510B1 /* TestHook.m */; };
 		C964708D1FAB14F000F61D64 /* EOCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C964708C1FAB14F000F61D64 /* EOCClass.m */; };
 		C96470961FAB197400F61D64 /* NSTimer+EOCBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C96470951FAB197400F61D64 /* NSTimer+EOCBlockSupport.m */; };
 		C964CC621FA1D724002D2CF1 /* Rectangle+Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = C964CC611FA1D724002D2CF1 /* Rectangle+Customer.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C95877341FAC3E6500B510B1 /* TestHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHook.h; sourceTree = "<group>"; };
+		C95877351FAC3E6500B510B1 /* TestHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestHook.m; sourceTree = "<group>"; };
 		C964708B1FAB14F000F61D64 /* EOCClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCClass.h; sourceTree = "<group>"; };
 		C964708C1FAB14F000F61D64 /* EOCClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCClass.m; sourceTree = "<group>"; };
 		C96470941FAB197400F61D64 /* NSTimer+EOCBlockSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+EOCBlockSupport.h"; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				C964CC611FA1D724002D2CF1 /* Rectangle+Customer.m */,
 				C98BD1ED1FA08A7F00C2A937 /* Square.h */,
 				C98BD1EE1FA08A7F00C2A937 /* Square.m */,
+				C95877341FAC3E6500B510B1 /* TestHook.h */,
+				C95877351FAC3E6500B510B1 /* TestHook.m */,
 				C98BD1DA1FA088F000C2A937 /* Main.storyboard */,
 				C98BD1DD1FA088F000C2A937 /* Assets.xcassets */,
 				C98BD1DF1FA088F000C2A937 /* LaunchScreen.storyboard */,
@@ -173,6 +178,7 @@
 				C98BD1D61FA088F000C2A937 /* AppDelegate.m in Sources */,
 				C964CC621FA1D724002D2CF1 /* Rectangle+Customer.m in Sources */,
 				C96470961FAB197400F61D64 /* NSTimer+EOCBlockSupport.m in Sources */,
+				C95877361FAC3E6500B510B1 /* TestHook.m in Sources */,
 				C98BD1EF1FA08A7F00C2A937 /* Square.m in Sources */,
 				C98BD1EC1FA0890B00C2A937 /* Rectangle.m in Sources */,
 			);
